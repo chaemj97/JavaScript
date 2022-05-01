@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 1. 해당 코드를 template string 을 활용하여 리팩토링하시오.
+    const name = 'Tom'
+    console.log('Hi, my name is' + name)
+
+    //
+    console.log('1번')
+    const greeting = 'Hi, my name is'
+    const greetingName = `${greeting} ${name}`
+    console.log(greetingName)
+    // 교수님
+    console.log(`Hi, my name is ${name}`)
+
+    // 2. 해당 코드를 arrow function 으로 리팩토링하시오.
+    function add(x, y) {
+      return x + y
+    }
+    
+    function square(x) {
+      return x ** 2
+    }
+
+    //
+    console.log('2번')
+    const a = (x,y) => x + y
+    console.log(a(5,2))
+
+    const b = x => x**2
+    console.log(b(4))
+
+
+    // 3. 해당 코드의 메서드 introduce 를 function 키워드 없이 리팩토링하시오.
+    const tom = {
+      name: 'Tom',
+      introduce: function () {
+        console.log('Hi, my name is' + this.name)
+      }
+    }
+    // tom.introduce()
+
+    //
+    console.log('3번')
+    const tom2 = {
+      name: 'Tom',
+      introduce() {
+        console.log('Hi, my name is' + this.name)
+      }
+    }
+    tom2.introduce()
+
+    // 4. 해당 코드를 key, value를 한번씩만 작성하도록 리팩토링하시오.
+    const url = 'https://test.com'
+    const data = { message: 'Hello World!' }
+
+    const request = { url: url, data: data }
+
+    // 교수님
+    console.log('4번')
+    const request2 = {url,data}
+
+  </script>
+</body>
+
+</html>

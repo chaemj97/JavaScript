@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let
+    let number = 10 // 선언 및 초기값 할당
+    number = 10 // 재할당 가능
+    // let number = 50 // 재선언 불가능
+
+    // const
+    const number2 = 10 
+    // number2 = 10 // 재할당 불가능
+    // const number2 = 50 // 재선언 불가능
+
+    // var
+    var number3 = 10
+    var number3 = 50 // 재할당 가능
+    console.log(number3) //50
+
+    // 블록 스코프
+    let x = 1
+    if (x === 1) {
+      let x = 2
+      console.log(x) // 2
+    }
+    console.log(x) // 1
+
+    // 템플릿 리터럴
+    const firstName = '민지'
+    const lastName = '채'
+    const fullName = `${firstName}${lastName}`
+    console.log(fullName)
+
+    // 할당 연산자
+    let a = 10
+    a += 5
+    console.log(a) // 15
+    a -= 5
+    console.log(a) // 10
+    a *= 5
+    console.log(a) // 50
+    a /= 5
+    console.log(a) // 10
+    a++
+    console.log(a) // 11
+    a--
+    console.log(a) // 10
+    
+    // 비교 연산자
+    const one = 1
+    const two = 2
+    console.log(one < two) // true
+    const aa = 'a'
+    const bb = 'bb'
+    console.log(aa > bb) // false
+
+    const q = 1004
+    const p = '1004'
+    console.log(p == q) // true 
+    console.log(p === q) // false
+    
+    // 삼항
+    console.log(true ? 1:2) // 1
+    console.log(false ? 1:2) // 2
+    const result = Math.PI > 4 ? 'Yes' : 'No'
+    console.log(result) // No
+  </script>
+
+</body>
+</html>
