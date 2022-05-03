@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- axios 검색 -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    axios
+    // 아래 콘솔에 한 줄씩 입력
+    const URL = 'https://jsonplaceholder.typicode.com/todos/1'
+    const responsePromise = axios.get(URL) // Promise 리턴
+    // axios.get(URL)
+    //   // 끝나면
+    //   .then(function(res) {
+    //     console.log(res)
+    //   })
+    responsePromise
+      .then(function(res) {
+      // 알아서 parsing해줌 res.data
+      // console.log(res.data)
+        // 넘기기 위해서
+        return res.data})
+      .then(function (todo) {
+        console.log(todo.title)
+      })
+      // 화살표 함수
+      // .then (res => res.data)
+      // .then (todo => console.log(todo.title))
+      // 더 짧게
+      //.then (res => console.log(res.data.title))
+      // 한가지라도 오류가 있다면 아래 (ex) URL틀리기
+      .catch(err => {
+      // console.error(err)
+        if (err.response.status === 404) {
+          alert('그딴건 없다')
+        } 
+      })
+      .finally (() => console.log('어쨌든 끝'))
+
+    // 전체 받아올 때(todos뒤에 1 없음)  
+    // axios.get(URL)  // Promise 리턴
+    //   .then(res => {
+    //     const todosArray = res.data
+    //     const todo = todosArray.find(todo => todo.id === 10)
+    //     return axios.get(`${URL}${todo.id}`)
+    //   })
+    //   .then(res => console.log(res.data))
+    //   .catch(err => {
+    //     if (err.response.status === 404) {
+    //       alert('그딴건 없다.')
+    //     }
+    //   })
+    //   .finally(() => console.log('어쨋든 끝!'))
+  </script>
+
+
+</body>
+</html>

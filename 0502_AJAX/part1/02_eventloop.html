@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log('strat1')
+
+    function after3Second() {
+      console.log('3초가 지났나보군...')
+    }
+    // 3초 후에 할꺼야
+    setTimeout(after3Second,3000)
+
+    console.log('end1')
+
+    // 콜백함수가 우선순위가 마지막
+    console.log('strat2')
+
+    function after0Second() {
+      console.log('바로 끝남')
+    }
+    setTimeout(after0Second,0)
+
+    for (let i=0; i<1000; i++) {
+    }
+
+    console.log('end2')
+  </script>
+</body>
+</html>

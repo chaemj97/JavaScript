@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<input lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .ssafy {
+      color : red;
+    }
+  </style>
+</head>
+<input>
+  <h1>SSAFY</h1>
+  
+  <div>
+    <ul>
+      <li class = 'ssafy'>서울</li>
+      <li class = 'ssafy'>구미</li>
+      <li class = 'ssafy'>광주</li>
+    </ul>
+  </div>
+
+  <button type="'button">버튼</button>
+  <button onclick="alertMessage()">누르기</button>
+
+  <form action="">
+    <label for="my-text-input">내용 입력</label>
+    <input type="text" id = "my-text-input">
+  </form>
+  <p id = 'my-paragraph'></p>
+
+  <h2>Change My Color</h2>
+  <label for="change-color-input">원하는 색상 입력</label>
+  <input type="text" id="change-color-input"></input>
+
+  <input type="checkbox" id="my-checkbox">
+
+  <script>
+    // h1태그 선택
+    const h1 = document.querySelector('h1')
+    // 클래스가 ssafy인거 선택
+    const ssafyTag = document.querySelectorAll('.ssafy')
+    
+    // li 태그 생성
+    const liTag = document.createElement('li')
+    liTag.innerText = '부울경'
+    // ul 태그 밑으로 넣기
+    const ulTag = document.querySelector('ul')
+    ulTag.append(liTag)
+    ulTag.append('캠퍼스')
+
+    // li 태그 생성
+    const newliTag = document.createElement('li')
+    newliTag.innerText = '대전'
+    // ul 태그 밑으로 넣기
+    ulTag.appendChild(newliTag)
+    // ulTag.appendChild('캠퍼스')
+
+
+    // innerText, innerHTML
+    const liTag2 = document.createElement('li')
+    liTag2.innerText = '<li>춘천</li>'
+    const liTag3 = document.createElement('li')
+    liTag3.innerHTML = '<li>춘천</li>'
+    ulTag.append(liTag2, liTag3)
+
+    // 삭제
+    // h1.remove()
+    const parent = document.querySelector('ul')
+    const child = document.querySelector('ul > li')
+    const removedChild = parent.removeChild(child)
+    console.log(removedChild)
+
+    // 속성
+    h1.setAttribute('class','ssafy')
+    h1.getAttribute('class')
+
+    // event
+    // 버튼을 누르면 알림창이 뜨도록
+    const btn = document.querySelector('button')
+    btn.addEventListener('click',function(evnt) {
+      alert('버튼을 클릭했습니다.')
+      console.log(event)
+    })
+    const alertMessage = function() {
+      alert('메롱')
+    }
+
+    // 입력하면 따라 치기
+    const textInput = document.querySelector('#my-text-input')
+    textInput.addEventListener('input', function(event) {
+      const pTag = document.querySelector('#my-paragraph')
+      pTag.innerText = event.target.value
+    })
+
+    // 입력하면 색이 바뀌기
+    const colorInput = document.querySelector('#change-color-input')
+    const changeColor = function(event) {
+      const h2Tag = document.querySelector('h2')
+      h2Tag.style.color = event.target.value
+    }
+    colorInput.addEventListener('input', changeColor)
+
+    // 이벤트 취소
+    // 체크박스 체크 
+    const checkBox = document.querySelector('#my-checkbox')
+    checkBox.addEventListener('click',function(event){
+      event.preventDefault()
+      console.log(event)
+    })
+  </script>
+</body>
+</html>
