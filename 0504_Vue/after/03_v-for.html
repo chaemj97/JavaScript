@@ -16,10 +16,11 @@
     <div v-for="fruit in fruits">
       {{ fruit }}
     </div>
-    <div v-for="(fruit, idx) in fruits">
+    <div v-for="(fruit, idx) in fruits" :key="idx">
       {{ idx }} => {{ fruit }} 
     </div>
-    <div v-for="todo in todos">
+    
+    <div v-for="todo in todos" :key="`todo-${todo.id}`">
       <p>{{ todo.title }} => {{ todo.completed }}</p>
     </div>
 
