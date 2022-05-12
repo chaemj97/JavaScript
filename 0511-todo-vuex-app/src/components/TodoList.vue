@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// 절대위치, @ :src의미
 import TodoListItem from '@/components/TodoListItem.vue'
 
 import { mapState } from 'vuex'
