@@ -13,7 +13,7 @@ export default {
   name:'VideoListItem',
   props:{
     video:Object,
-  },
+  }, 
   methods:{
     videoSelect :function(){
       // 내가 선택되었으니깐... 메인에서 나를 출력해라
